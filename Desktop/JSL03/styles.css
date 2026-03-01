@@ -1,0 +1,144 @@
+/* ========================
+   Global & Root Variables
+======================== */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #f4f7fd;
+  --primary-font-color: #000000;
+  --secondary-font-color: #828fa3;
+  --primary-box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.1015);
+  --sidebar-width: 300px;
+}
+
+/* ================
+   Base Elements
+================ */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex; /* Sidebar and Layout side-by-side */
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--secondary-color);
+  overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* ================
+   Sidebar Layout
+================ */
+.side-bar {
+  flex-shrink: 0; /* Prevents sidebar from squishing */
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--primary-color);
+  border-right: 1px solid #e4ebfa;
+  display: flex;
+  flex-direction: column;
+}
+
+#side-logo-div {
+  padding: 32px 24px;
+}
+
+.boards-nav-links-div {
+  margin-top: 15px;
+}
+
+#headline-sidepanel {
+  padding-left: 32px;
+  color: var(--secondary-font-color);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.board-btn {
+  background-color: #635fc7;
+  color: white;
+  border: none;
+  width: 90%;
+  padding: 15px 32px;
+  border-radius: 0 100px 100px 0;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* ===============
+   Main Layout
+================ */
+#layout {
+  flex-grow: 1; /* Fills remaining width */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: auto; /* Allows horizontal board scrolling */
+}
+
+#header {
+  background-color: var(--primary-color);
+  padding: 20px 32px;
+  border-bottom: 1px solid #e4ebfa;
+  width: 100%;
+}
+
+.container {
+  flex-grow: 1;
+  padding: 24px;
+}
+
+/* Kanban Columns Row */
+.card-column-main {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.column-div {
+  width: 280px;
+  flex-shrink: 0; /* Keeps columns at 280px width */
+}
+
+.column-head-div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.columnHeader {
+  margin: 0;
+  color: var(--secondary-font-color);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+/* Task Cards */
+.task-div {
+  background-color: var(--primary-color);
+  padding: 20px 16px;
+  border-radius: 8px;
+  box-shadow: var(--primary-box-shadow);
+  margin-bottom: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary-font-color);
+}
+
+/* Color Dots */
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+#todo-dot { background-color: #49c4e5; }
+#doing-dot { background-color: #8471f2; }
+#done-dot { background-color: #67e2ae; }
+
+/* Responsive */
+.logo-mobile { display: none; }
+
